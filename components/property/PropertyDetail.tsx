@@ -1,5 +1,5 @@
 import { PropertyProps } from "@/interfaces/index";
-// import Image from "next/image";
+import Image from "next/image";
 
 const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
 	property,
@@ -16,9 +16,11 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
 
 			{/* Image Grid */}
 			<div className="grid grid-cols-2 gap-4 mt-4">
-				<img
+				<Image
 					src={property.image}
 					alt={property.name}
+					width={500}
+					height={348}
 					className="col-span-2 w-full h-96 object-cover rounded-lg"
 				/>
 				{/* Add more images */}
@@ -27,7 +29,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
 			{/* Description */}
 			<div className="mt-4">
 				<h2 className="text-2xl font-semibold">Description</h2>
-				<p>{property.description}</p>
+				{/* <p>{property.description}</p> */}
 			</div>
 
 			{/* Amenities */}
